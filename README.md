@@ -30,14 +30,14 @@ A table will appear with all your open orders, ie:
 ```
 
 ### To make sense of the table:
-'total order sell' = Total value of your sell orders for given pair
-'total sell quantity' = Total quantity of sell orders
-'av. sell price' = Average sell price of orders
-'lowest sell price' = The lowest sell price of orders
-'current value' = Current market rate for given pair
-'24hr' = % change in market value for pair
-'optimism' = 'av. sell price' divided by 'current value'.
-'optimism at lowest' = 'lowest sell price' divided by 'current value'.
+* 'total order sell' = Total value of your sell orders for given pair
+* 'total sell quantity' = Total quantity of sell orders
+* 'av. sell price' = Average sell price of orders
+* 'lowest sell price' = The lowest sell price of orders
+* 'current value' = Current market rate for given pair
+* '24hr' = % change in market value for pair
+* 'optimism' = 'av. sell price' divided by 'current value'.
+* 'optimism at lowest' = 'lowest sell price' divided by 'current value'.
 
 ### Optimism
 Basically, the lower the number and closer to 1.000, the more likely the orders will be filled sooner. If a market has a strong 24hr % increase and your optimism value is close to 1, you may want to consider raising the sell price.
