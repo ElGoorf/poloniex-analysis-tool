@@ -1,0 +1,14 @@
+{
+  "name": "poloniex-analysis",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node --experimental-modules index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "poloniex-api-node": "^2.0.2"
+  }
+}
