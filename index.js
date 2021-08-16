@@ -1,13 +1,15 @@
 import Poloniex from "poloniex-api-node";
-import { readFile } from 'fs/promises';
+import dotenv from "dotenv";
+
+dotenv.config()
+const credentials = {
+    key: process.env.POLO_KEY,
+    secret: process.env.POLO_SECRET,
+};
+
+console.log({credentials})
 
 async function run() {
-    const credentials = JSON.parse(
-        await readFile(
-            new URL('./credentials.json', import.meta.url)
-        )
-    );
-
     const poloniex = new Poloniex (credentials.key, credentials.secret);
     poloniex.returnOpenOrders('ALL', function (err, orders) {
         if (err) {
