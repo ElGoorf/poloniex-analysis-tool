@@ -22,7 +22,7 @@ async function run() {
 
                 const actualOrders = Object.entries(orders).filter(([pair, ordersForPair]) => ordersForPair.length > 0);
 
-                let table = [['pair', 'total order sell', 'total sell quantity', 'av. sell price', 'lowest sell price', 'current value', '24hr', 'optimism', 'optimism at lowest']];
+                let table = [];
                 actualOrders.forEach(([pair, ordersForPair]) => {
                     const summary = ordersForPair.reduce((acc, order) => {
                         if (order.type === 'sell' && order.margin === 0) {
@@ -45,9 +45,10 @@ async function run() {
                         `${parseFloat(ticker[pair].percentChange * 100).toFixed(2)} %`, summary.avOrderSellPrice / ticker[pair].last, summary.lowestPrice / ticker[pair].last,
                     ])
                 });
-                console.table(table)
-
-
+                console.table([
+                    ['pair', 'total order sell', 'total sell quantity', 'av. sell price', 'lowest sell price', 'current value', '24hr', 'optimism', 'optimism at lowest'],
+                    ...table.sort((a,b) => a[8] - b[8])
+                ]);
             }
         });
     });
