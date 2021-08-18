@@ -7,8 +7,6 @@ const credentials = {
     secret: process.env.POLO_SECRET,
 };
 
-console.log({credentials})
-
 async function run() {
     const poloniex = new Poloniex (credentials.key, credentials.secret);
     poloniex.returnOpenOrders('ALL', function (err, orders) {
